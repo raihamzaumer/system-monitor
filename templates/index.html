@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Monitor</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial;
+            background: #111;
+            color: #0f0;
+            text-align: center;
+        }
+        .card {
+            border: 1px solid #0f0;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🖥️ System Monitoring Dashboard</h1>
+
+<div class="card">
+    <h2>CPU Usage</h2>
+    <p id="cpu">Loading...</p>
+</div>
+
+<div class="card">
+    <h2>Memory Usage</h2>
+    <p id="memory">Loading...</p>
+</div>
+
+<div class="card">
+    <h2>Disk Usage</h2>
+    <p id="disk">Loading...</p>
+</div>
+
+
+<script>
+    async function fetchStats() {
+        const response = await fetch("/api/stats");
+        const data = await response.json();
+
+        document.getElementById("cpu").innerText = data.cpu + "%";
+        document.getElementById("memory").innerText = data.memory + "%";
+        document.getElementById("disk").innerText = data.disk + "%";
+        
+    }
+
+    fetchStats();
+    setInterval(fetchStats, 5000); // refresh every 5 sec
+</script>
+
+</body>
+</html>
