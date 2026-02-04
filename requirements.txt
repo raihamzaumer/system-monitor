@@ -1,1 +1,4 @@
 psutil
+Flask==3.0.0
+# Add other dependencies like psutil if your monitor uses them
+
