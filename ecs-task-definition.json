@@ -1,5 +1,6 @@
 {
   "family": "system-monitor-task",
+  "executionRoleArn": "arn:aws:iam::518893645135:role/ecsTaskExecutionRole"
   "networkMode": "awsvpc",
   "containerDefinitions": [
     {
