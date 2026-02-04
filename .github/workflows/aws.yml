@@ -11,7 +11,7 @@ env:
   ECR_REPOSITORY: system_monitor           # set this to your Amazon ECR repository name
   ECS_SERVICE: system_monitor_sr                # set this to your Amazon ECS service name
   ECS_CLUSTER: system_monitor_cluster                # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: system_monitor_TASK_DEFINITION # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: ./ecs-task-definition.json  # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: MY_SYS_MONITOR          # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
